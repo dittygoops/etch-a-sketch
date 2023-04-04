@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 
+//#region Algorithm to create grid
 for (let i = 0; i < 10; i++) {
     const rowContainer = document.createElement('div');
     rowContainer.classList.add('row-container');
@@ -11,3 +12,4 @@ for (let i = 0; i < 10; i++) {
         rowContainer.appendChild(cell);
     }
 }
+//#endregion
