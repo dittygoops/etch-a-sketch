@@ -22,3 +22,7 @@ body {
     background-color: white;
     margin: 2px;
 }
+
+.hover {
+    background-color: black;
+}

@@ -13,3 +13,10 @@ for (let i = 0; i < 10; i++) {
     }
 }
 //#endregion
+
+function addHoverClass() {
+    this.classList.add('hover');
+}
+
+const cells = document.querySelectorAll('.cell');
+cells.forEach(cell => cell.addEventListener('mouseover', addHoverClass))
