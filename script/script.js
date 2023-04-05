@@ -19,21 +19,19 @@ function createGrid(num) {
     }
 
     cells = document.querySelectorAll('.cell');
-    cells.forEach(cell => cell.addEventListener('mouseover', increaseBlack));
+    cells.forEach(cell => cell.addEventListener('mouseover', randomizeColor));
 }
 
 function getNum() {
     createGrid(input.value);
 }
 
-function increaseBlack() {
-    const color = window.getComputedStyle(this).getPropertyValue('background-color');
-    colorCSV = color.split('(')[1].slice(0, -1).split(', ');
-    let x = null;
-
-    colorCSV[0] - 26 >= 0 ? x = colorCSV[0] - 26 : x = 0;
+function randomizeColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
     
-    this.style.backgroundColor = 'rgb(' + x + ', ' + x + ', ' + x + ')';
+    this.style.backgroundColor = 'rgb(' + r + ', ' + g + ', ' + b + ')';
 
 }
 
