@@ -19,15 +19,22 @@ function createGrid(num) {
     }
 
     cells = document.querySelectorAll('.cell');
-    cells.forEach(cell => cell.addEventListener('mouseover', addHoverClass));
+    cells.forEach(cell => cell.addEventListener('mouseover', increaseBlack));
 }
 
 function getNum() {
     createGrid(input.value);
 }
 
-function addHoverClass() {
-    this.classList.add('hover');
+function increaseBlack() {
+    const color = window.getComputedStyle(this).getPropertyValue('background-color');
+    colorCSV = color.split('(')[1].slice(0, -1).split(', ');
+    let x = null;
+
+    colorCSV[0] - 26 >= 0 ? x = colorCSV[0] - 26 : x = 0;
+    
+    this.style.backgroundColor = 'rgb(' + x + ', ' + x + ', ' + x + ')';
+
 }
 
 createGrid(16);
